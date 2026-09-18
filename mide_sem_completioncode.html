@@ -1,0 +1,297 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>Midsem Completion Code</title>
+<style>
+  :root {
+    --bg: #eef1f5;
+    --surface: #ffffff;
+    --border: #d7dee6;
+    --text: #101b28;
+    --muted: #5b6c7c;
+    --nusblue: #003d7c;
+    --accent: #0057b8;
+    --code-bg: #0b1e33;
+    --code-fg: #eaf1ff;
+    --code-check: #ffb454;
+    --success: #1e8e5a;
+    --success-bg: #e6f4ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1520;
+      --surface: #14202f;
+      --border: #263547;
+      --text: #eef2f7;
+      --muted: #9fb0c1;
+      --nusblue: #6ba4ff;
+      --accent: #7db2ff;
+      --code-bg: #060d16;
+      --code-fg: #eaf1ff;
+      --code-check: #ffb454;
+      --success: #4fd18b;
+      --success-bg: #113224;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1520;
+    --surface: #14202f;
+    --border: #263547;
+    --text: #eef2f7;
+    --muted: #9fb0c1;
+    --nusblue: #6ba4ff;
+    --accent: #7db2ff;
+    --code-bg: #060d16;
+    --code-fg: #eaf1ff;
+    --code-check: #ffb454;
+    --success: #4fd18b;
+    --success-bg: #113224;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Public Sans", -apple-system, "Segoe UI", sans-serif;
+    padding-inline: 16px;
+    padding-block: 32px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 460px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    box-shadow: 0 1px 2px rgba(16, 27, 40, 0.04), 0 12px 32px -16px rgba(16, 27, 40, 0.18);
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 6px;
+  }
+
+  h1 {
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: var(--nusblue);
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0 0 22px;
+  }
+
+  .lede b { color: var(--text); font-weight: 600; }
+
+  .code-panel {
+    background: var(--code-bg);
+    border-radius: 12px;
+    padding: 20px 16px 16px;
+    margin-bottom: 14px;
+  }
+
+  .code-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8fa8c7;
+    margin: 0 0 10px;
+    text-align: center;
+  }
+
+  .code-display {
+    font-family: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: clamp(22px, 6.5vw, 30px);
+    font-weight: 600;
+    color: var(--code-fg);
+    letter-spacing: 0.04em;
+    text-align: center;
+    word-break: break-all;
+  }
+
+  .code-display .check {
+    color: var(--code-check);
+  }
+
+  .code-hint {
+    text-align: center;
+    font-size: 11.5px;
+    color: #7189a6;
+    margin-top: 8px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 9px;
+    border: 1px solid transparent;
+    padding: 11px 14px;
+    cursor: pointer;
+    transition: transform 0.08s ease, opacity 0.15s ease;
+  }
+  button:active { transform: scale(0.98); }
+
+  .btn-primary {
+    flex: 1;
+    background: var(--accent);
+    color: #ffffff;
+  }
+  .btn-primary.copied {
+    background: var(--success);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--muted);
+  }
+
+  .steps {
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+  }
+
+  .steps ol {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+  .steps li { margin-bottom: 6px; }
+  .steps li:last-child { margin-bottom: 0; }
+
+  .footnote {
+    margin-top: 18px;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  [hidden] { display: none !important; }
+</style>
+
+<link rel="stylesheet" href="midsem_completion_code_files/css2_Fe7b.css">
+
+</head><body><div class="card">
+  <p class="eyebrow">UTC2851 � Mid-Semester Feedback</p>
+  <h1>Thanks for your feedback</h1>
+  <p class="lede">
+    That's the survey done, it genuinely helps. Here's how to see your PE1
+    results now: copy the code below and submit it, with your name, on the
+    Coursemology assessment linked underneath.
+  </p>
+
+  <div class="code-panel">
+    <p class="code-label">Completion code</p>
+    <div class="code-display" id="codeDisplay">�</div>
+  </div>
+
+  <div class="actions">
+    <button class="btn-primary" id="copyBtn" type="button">Copy code</button>
+  </div>
+
+  <div class="steps">
+    <ol>
+      <li>Copy the code above.</li>
+      <li>Open the <a href="https://coursemology.org/courses/3403/assessments/94188" target="_blank" rel="noopener">Mid-Semester Survey Code</a> assessment on Coursemology.</li>
+      <li>Enter your name and the code, then submit.</li>
+    </ol>
+  </div>
+
+  <p class="footnote">
+    This is a random code, generated in your browser. It can't be tracked
+    back to this survey or to you.
+  </p>
+</div>
+
+<script>
+  (function () {
+    // Verhoeff checksum: catches every single-digit error and every
+    // adjacent transposition, which a simple Luhn-style check doesn't.
+    // Standard published tables, see e.g. the Verhoeff algorithm reference.
+    var D = [
+      [0,1,2,3,4,5,6,7,8,9],[1,2,3,4,0,6,7,8,9,5],[2,3,4,0,1,7,8,9,5,6],
+      [3,4,0,1,2,8,9,5,6,7],[4,0,1,2,3,9,5,6,7,8],[5,9,8,7,6,0,4,3,2,1],
+      [6,5,9,8,7,1,0,4,3,2],[7,6,5,9,8,2,1,0,4,3],[8,7,6,5,9,3,2,1,0,4],
+      [9,8,7,6,5,4,3,2,1,0]
+    ];
+    var P = [
+      [0,1,2,3,4,5,6,7,8,9],[1,5,7,6,2,8,3,0,9,4],[5,8,0,3,7,9,6,1,4,2],
+      [8,9,1,6,0,4,3,5,2,7],[9,4,5,3,1,2,6,8,7,0],[4,2,8,6,5,7,3,9,0,1],
+      [2,7,9,3,8,0,6,4,1,5],[7,0,4,6,9,1,3,2,5,8]
+    ];
+    var INV = [0,4,3,2,1,5,6,7,8,9];
+
+    function verhoeffCheckDigit(digits) {
+      // digits: array of ints, most-significant first, WITHOUT a check digit yet.
+      var c = 0;
+      var rev = digits.slice().reverse();
+      for (var i = 0; i < rev.length; i++) {
+        var pos = i + 1; // position 0 is reserved for the not-yet-known check digit
+        c = D[c][P[pos % 8][rev[i]]];
+      }
+      return INV[c];
+    }
+
+    function randomPayload(len) {
+      var out = [];
+      for (var i = 0; i < len; i++) out.push(Math.floor(Math.random() * 10));
+      // avoid an all-leading-zero payload, purely cosmetic
+      if (out[0] === 0) out[0] = 1 + Math.floor(Math.random() * 9);
+      return out;
+    }
+
+    function renderCode() {
+      var payload = randomPayload(8);
+      var check = verhoeffCheckDigit(payload);
+      var payloadStr = payload.join("");
+      var grouped = payloadStr.slice(0, 4) + " " + payloadStr.slice(4, 8);
+      var el = document.getElementById("codeDisplay");
+      el.innerHTML = grouped + " &ndash; <span class=\"check\">" + check + "</span>";
+      el.dataset.fullCode = payloadStr + check;
+    }
+
+    document.getElementById("copyBtn").addEventListener("click", function () {
+      var full = document.getElementById("codeDisplay").dataset.fullCode || "";
+      var btn = this;
+      function flash() {
+        var original = "Copy code";
+        btn.textContent = "Copied!";
+        btn.classList.add("copied");
+        setTimeout(function () {
+          btn.textContent = original;
+          btn.classList.remove("copied");
+        }, 1400);
+      }
+      try {
+        navigator.clipboard.writeText(full).then(flash, flash);
+      } catch (e) {
+        flash();
+      }
+    });
+
+    renderCode();
+  })();
+</script>
+</body></html>
